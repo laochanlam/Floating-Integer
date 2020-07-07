@@ -11,10 +11,10 @@ int main () {
 
     std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
     for (int i = 0; i < 10000; i++) {
-        int *tmp_buffer = quantizeToIntArray((float *)data, num_count);
-        // printf("%d\n", tmp_buffer[1]);
-        dequantizeToFloatArray((float *)data, num_count);
-        // printf("%f\n", data[1]);
+        quantizeToIntArray((char*)data, num_count);
+        printf("%d\n", ((int*)data)[1]);
+        dequantizeToFloatArray((char*)data, num_count);
+        printf("%f\n", ((float*)data)[1]);
     }
     std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1);
