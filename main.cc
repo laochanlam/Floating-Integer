@@ -7,7 +7,7 @@
 const float Epsilon = 0.000001 * 5;
 
 int main () {
-    int num_count = 1024000;
+    int num_count = 1024000 - 1;
     float* data = (float*)malloc(sizeof(int32_t) * num_count);
     for (int i = 0; i < num_count; i++)
         data[i] = i * 0.000001;
