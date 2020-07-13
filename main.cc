@@ -1,8 +1,8 @@
 #include "global.h"
 #include <stdlib.h>
-#include <stdio.h>
 #include <chrono>
 #include <cmath>
+#include <stdio.h>
 
 const float Epsilon = 0.000001 * 3;
 const unsigned int SampleIdx = 135;
@@ -28,6 +28,8 @@ int main () {
     // flush data
     for (int i = 0; i < num_count; i++)
         data[i] = i * 0.000001;
+
+    printf("Entering AVX2...\n");
 
     float avx2_preaction_sample = data[SampleIdx];
     // Boost with AVX2
